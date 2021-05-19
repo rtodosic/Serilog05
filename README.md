@@ -1,6 +1,14 @@
+## Context
+1. [.Net Core Serilog – Basic](https://github.com/rtodosic/Serilog01/)
+2. [.Net Core Serilog – Configuration](https://github.com/rtodosic/Serilog02/)
+3. [.Net Core Serilog - Structured JSON output](https://github.com/rtodosic/Serilog03/)
+4. [.Net Core Serilog - Enrichers](https://github.com/rtodosic/Serilog04/)
+5. .Net Core Serilog - Custom JSON output
+6. [.Net Core Serilog - Adding Sinks](https://github.com/rtodosic/Serilog06/)
 
+This is part 5 of 6.
 
-## .Net Core Serilog – Custom JSON output
+## 5. .Net Core Serilog – Custom JSON output
 
 Serilog’s “CompactJsonFormatter” may not be what you want. In cases where you need to more control on field names and data, you can use the “Expression Template”.
 
