@@ -2,10 +2,11 @@
 
 ## .Net Core Serilog – Custom JSON output
 
-Serilog’s “CompactJsonFormatter” may not be what you want. In cases where you need to specify the fields in the log output, you can use the “Expression Template”.
+Serilog’s “CompactJsonFormatter” may not be what you want. In cases where you need to more control on field names and data, you can use the “Expression Template”.
 
 1.	Add “Serilog.Expression” NuGet package to your project.
-  
+   ![Image alt text](Images/NuGet-Serilog-Expressions.png?raw=true)
+   
 2.	In Program.cs, add “using Serilog.Templates” to the top of the file and change the  CreateHostBuilder() method to the following:
   ```C#
   public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -23,5 +24,6 @@ Serilog’s “CompactJsonFormatter” may not be what you want. In cases where 
       );
   ```
 3.	Run the application and notice that the names of the fields have changed and the level is different as well. 
+   ![Image alt text](Images/Console-Serilog-Expression.png?raw=true)
  
 [Serilog Expressions repo for documentation](https://github.com/serilog/serilog-expressions)
