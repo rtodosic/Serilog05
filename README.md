@@ -23,12 +23,12 @@ Serilog’s “CompactJsonFormatter” may not be what you want. In cases where 
           {
               webBuilder.UseStartup<Startup>();
           })
-      .UseSerilog((hostingContect, loggerConfiguration) => loggerConfiguration
-          .ReadFrom.Configuration(hostingContect.Configuration)
+      .UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
+          .ReadFrom.Configuration(hostingContext.Configuration)
           .Enrich.FromLogContext()
           .Enrich.WithMachineName()
           .Enrich.WithProperty("Assembly", typeof(Program).Assembly.GetName().Name)
-          .WriteTo.Console(new ExpressionTemplate("{ {app_timestamp:@t, message:@m, rendering:@r, level:if @l = 'Debug' then 'DEBUG' else if @l = 'Warning' then 'WARN' else if @l = 'Error' then 'ERR' else if @l = 'Fatal' then 'FTL' else @l, exception:@x, ..@p} }\n"))
+          .WriteTo.Console(new ExpressionTemplate("{ {app_timestamp:@t, message:@m, rendering:@r, level:if @l = 'Debug' then 'DEBUG' else if @l = 'Information' then 'INFO' else if @l = 'Warning' then 'WARN' else if @l = 'Error' then 'ERR' else if @l = 'Fatal' then 'FTL' else @l, exception:@x, ..@p} }\n"))
       );
   ```
 3.	Run the application and notice that the names of the fields have changed and the level is different as well. 
